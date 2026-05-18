@@ -1,0 +1,8 @@
+{
+  "name": "ChargeAlert",
+  "description": "Protege la batería de tu dispositivo inteligentemente con esta aplicación moderna y futurista.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

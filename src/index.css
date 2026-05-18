@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-background: #0d1515;
+  --color-primary: #00f2ff;
+  --color-surface: #192122;
+  --color-surface-variant: #2e3637;
+  --color-on-background: #dce4e4;
+  --color-on-surface: #dce4e4;
+  --color-on-surface-variant: #b9cacb;
+}
+
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-on-background font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background-color: color-mix(in srgb, var(--color-surface) 60%, transparent);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+  }
+
+  .button-primary {
+    background-color: var(--color-primary);
+    color: #00363a;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition-property: all;
+    transition-duration: 300ms;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  }
+
+  .button-primary:hover {
+    transform: scale(1.05);
+  }
+
+  .button-primary:active {
+    transform: scale(0.95);
+  }
+
+  .button-secondary {
+    border: 1px solid color-mix(in srgb, var(--color-primary) 50%, transparent);
+    color: var(--color-primary);
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition-property: all;
+    transition-duration: 300ms;
+    backdrop-filter: blur(12px);
+  }
+
+  .button-secondary:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  }
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+.scroll-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
